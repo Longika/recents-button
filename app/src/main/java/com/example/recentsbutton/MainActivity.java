@@ -1,7 +1,8 @@
 package com.example.recentsbutton;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -15,9 +16,8 @@ public class MainActivity extends Activity {
         button.setText("Open Recents");
 
         button.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_APP_SWITCHER);
-            startActivity(intent);
+            ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+            moveTaskToBack(false);
         });
 
         setContentView(button);
