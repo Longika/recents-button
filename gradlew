@@ -46,4 +46,3 @@ CLASSPATH=$GRADLE_HOME/wrapper/gradle-wrapper.jar
 
 # Execute Gradle
 exec java $DEFAULT_JVM_OPTS -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
-
