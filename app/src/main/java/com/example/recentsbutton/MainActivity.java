@@ -1,17 +1,25 @@
 package com.example.recentsbutton;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Nincs UI, csak gombnyomás
-        // Lenyomja a RECENTS gombot programból
-        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_APP_SWITCH));
-        dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_APP_SWITCH));
-        finish();
+
+        Button button = new Button(this);
+        button.setText("Open Recents");
+
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_APP_SWITCHER);
+            startActivity(intent);
+        });
+
+        setContentView(button);
     }
 }
