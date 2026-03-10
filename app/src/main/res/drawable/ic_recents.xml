@@ -4,12 +4,18 @@
     android:viewportWidth="24"
     android:viewportHeight="24">
 
+    <!-- hátsó téglalap -->
     <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M6,6h12v12h-12z"/>
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M5,5h12v12h-12z"/>
 
+    <!-- első téglalap -->
     <path
-        android:fillColor="#80FFFFFF"
-        android:pathData="M4,4h12v12h-12z"/>
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M7,7h12v12h-12z"/>
 
 </vector>
